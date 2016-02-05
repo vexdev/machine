@@ -6,8 +6,10 @@ fi
 source ~/machine/git-completion.bash
 source ~/machine/functions.sh
 
+export ANDROID_HOME=$HOME/sdk/
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-export PATH=$PATH:/Users/luca.vitucci/sdk/tools/:/Users/luca.vitucci/sdk/platform-tools/
+export PATH=$PATH:$HOME/go/bin/:$ANDROID_HOME/tools/:$ANDROID_HOME/platform-tools/
+export GOPATH=$HOME/go/
 
 alias v='/usr/local/Cellar/vim/7.4.1147/bin/vim'
 alias vi='/usr/local/Cellar/vim/7.4.1147/bin/vim'
