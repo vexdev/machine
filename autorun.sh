@@ -11,7 +11,7 @@ export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 export PATH=$PATH:$HOME/go/bin/:$ANDROID_HOME/tools/:$ANDROID_HOME/platform-tools/
 export GOPATH=$HOME/go/
 
-alias v='/usr/local/Cellar/vim/7.4.1147/bin/vim'
-alias vi='/usr/local/Cellar/vim/7.4.1147/bin/vim'
-alias vim='/usr/local/Cellar/vim/7.4.1147/bin/vim'
-alias vimdiff='/usr/local/Cellar/vim/7.4.1147/bin/vimdiff'
+alias v='/usr/local/Cellar/vim/7.4.1707/bin/vim'
+alias vi='/usr/local/Cellar/vim/7.4.1707/bin/vim'
+alias vim='/usr/local/Cellar/vim/7.4.1707/bin/vim'
+alias vimdiff='/usr/local/Cellar/vim/7.4.1707/bin/vimdiff'

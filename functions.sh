@@ -1,6 +1,6 @@
 #!/bin/bash 
-function prdev {
-	stash pull-request development @victor.ivascu @hans.vanwesenbeeck @ciprian.ursu @iliyan.ivanov @ljubisa.stankovic @patryk.zabicki @danail.alexiev
+function prmas {
+	stash pull-request master @victor.ivascu @hans.vanwesenbeeck @ciprian.ursu @iliyan.ivanov @ljubisa.stankovic @patryk.zabicki @danail.alexiev
 }
 function prrel {
 	echo "Enter the version of the release branch (release/xxxxx)"
