@@ -6,7 +6,7 @@ fi
 source ~/machine/git-completion.bash
 source ~/machine/functions.sh
 
-export ANDROID_HOME=$HOME/sdk/
+export ANDROID_HOME=$HOME/Library/Android/sdk/
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 export PATH=$PATH:$HOME/go/bin/:$ANDROID_HOME/tools/:$ANDROID_HOME/platform-tools/
 export GOPATH=$HOME/go/
