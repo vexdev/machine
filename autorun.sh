@@ -10,6 +10,7 @@ export ANDROID_HOME=$HOME/Library/Android/sdk/
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 export PATH=$PATH:$HOME/go/bin/:$ANDROID_HOME/tools/:$ANDROID_HOME/platform-tools/
 export GOPATH=$HOME/go/
+export STUDIO_JDK=/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk
 
 alias v='/usr/local/Cellar/vim/7.4.1707/bin/vim'
 alias vi='/usr/local/Cellar/vim/7.4.1707/bin/vim'
