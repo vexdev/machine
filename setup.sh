@@ -10,7 +10,6 @@ echo "Setting up brew"
 echo "Setting up zsh (Password needed to configure zsh as default shell for current user)"
 brew install zsh
 sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
-echo "source ~/machine/zshrc" > ~/.zshrc
 
 echo "Setting up vim"
 brew install vim
@@ -30,7 +29,23 @@ echo "git config --global alias.force 'push --force'"
 echo "Installing zsh-git-prompt"
 brew install zsh-git-prompt
 
+echo "Setup powerline font"
+# clone
+git clone https://github.com/powerline/fonts.git
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+
 echo "Installing cowsay"
 brew install cowsay
+
+echo "Installing oh-my-zsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+echo "Adding zsh config"
+echo "source ~/machine/zshrc" > ~/.zshrc
 
 echo "All good! Now kill this terminal and open a new one ;)"

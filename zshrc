@@ -15,13 +15,14 @@ SAVEHIST=10000
 #
 
 # Setup ZSH Git Prompt
-source ~/zsh-git-prompt/zshrc.sh
-PROMPT='%B%m%~%b$(git_super_status) %# '
+#source ~/zsh-git-prompt/zshrc.sh
+#PROMPT='%B%m%~%b$(git_super_status) %# '
 
 # Set VI mode
 bindkey -v
 
 # Defining Variables
+export ZSH=~/.oh-my-zsh
 export MACHINE_CONFIG=$(dirname "$0")
 export ANDROID_HOME=$HOME/Library/Android/sdk/
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
@@ -31,6 +32,7 @@ path+=('$HOME/go/bin/')
 path+=('$ANDROID_HOME/tools/')
 path+=('$ANDROID_HOME/platform-tools/')
 path+=('$ANDROID_HOME/build-tools/25.0.2/')
+path+=('$ZSH')
 export PATH
 export VIM_VERSION=$(ls -1 /usr/local/Cellar/vim/ | sort -rn | head -n1)
 export VIM_HOME="/usr/local/Cellar/vim/$VIM_VERSION/bin/"
@@ -41,7 +43,6 @@ alias vi="$VIM_HOME/vim"
 alias vim="$VIM_HOME/vim"
 alias vimdiff="$VIM_HOME/vimdiff"
 alias gw="$MACHINE_CONFIG/gw.sh"
-alias g='git'
 alias amend='g all && g force'
 
 # Some functions
@@ -49,3 +50,8 @@ source $MACHINE_CONFIG/functions.sh
 
 # Welcome screed
 fortune | cowsay -f stegosaurus
+
+# Oh my zsh
+ZSH_THEME="agnoster"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
