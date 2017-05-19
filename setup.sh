@@ -1,21 +1,36 @@
+#!/bin/bash
+
+## Bash script for setting up OSX machines.
+export MACHINE_CONFIG=$(pwd)
+echo "Setting up machine configuration in $MACHINE_CONFIG"
+
+echo "Setting up brew"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+echo "Setting up zsh (Password needed to configure zsh as default shell for current user)"
+brew install zsh
+sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
+echo "source ~/machine/zshrc" > ~/.zshrc
+
+echo "Setting up vim"
+brew install vim
+
 echo "Setting up NeoBundle"
 curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh
 sh install.sh
 rm install.sh
 
 echo "Setting up VimRc"
-echo "so ~/machine/vimrc" > "~/.vimrc"
+echo "so $MACHINE_CONFIG/vimrc" > ~/.vimrc
 
 echo "Setting up Git configurations"
 echo "git config --global alias.all 'commit -a --amend --no-edit'"
 echo "git config --global alias.force 'push --force'"
 
-echo "Setting up Autorun file (Terminal)"
-echo "source ~/machine/autorun.sh" > ../.bashrc
-echo "source ~/machine/autorun.sh" > ../.bash_profile
+echo "Installing zsh-git-prompt"
+brew install zsh-git-prompt
 
-echo "Setting up brew"
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+echo "Installing cowsay"
+brew install cowsay
 
-echo "Installing bash-git-prompt"
-brew install bash-git-prompt
+echo "All good! Now kill this terminal and open a new one ;)"

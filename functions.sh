@@ -1,12 +1,15 @@
-#!/bin/bash 
+DEVS="@christian.reinhold @piotr.spyra @victor.ivascu @ciprian.ursu @ljubisa.stankovic @patryk.zabicki"
+
 function prmas {
-	stash pull-request master @christian.reinhold @piotr.spyra @victor.ivascu @hans.vanwesenbeeck @ciprian.ursu @iliyan.ivanov @ljubisa.stankovic @patryk.zabicki 
+	stash pull-request master $DEVS 
 }
+
 function prrel {
 	echo "Enter the version of the release branch (release/xxxxx)"
 	read branch
-	stash pull-request release/$branch @christian.reinhold @piotr.spyra @victor.ivascu @hans.vanwesenbeeck @ciprian.ursu @iliyan.ivanov @ljubisa.stankovic @patryk.zabicki
+	stash pull-request release/$branch $DEVS
 }
+
 function screenshot {
 	adb shell screencap -p | perl -pe 's/\x0D\x0A/\x0A/g' > screen.png
 	open screen.png
