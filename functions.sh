@@ -1,13 +1,13 @@
 DEVS="@ljubisa.stankovic @christian.reinhold @piotr.spyra @victor.ivascu @ciprian.ursu @patryk.zabicki"
 
 function prmas {
-	stash pull-request master $DEVS 
+	eval stash pull-request master $DEVS 
 }
 
 function prrel {
 	echo "Enter the version of the release branch (release/xxxxx)"
 	read branch
-	stash pull-request release/$branch $DEVS
+	eval stash pull-request release/$branch $DEVS
 }
 
 function screenshot {
