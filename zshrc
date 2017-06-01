@@ -14,25 +14,26 @@ SAVEHIST=10000
 # End of lines configured by zsh-newuser-install
 #
 
-# Setup ZSH Git Prompt
-#source ~/zsh-git-prompt/zshrc.sh
-#PROMPT='%B%m%~%b$(git_super_status) %# '
+# Oh my zsh
+export ZSH=~/.oh-my-zsh
+ZSH_THEME="agnoster"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
 
 # Set VI mode
 bindkey -v
 
 # Defining Variables
-export ZSH=~/.oh-my-zsh
 export MACHINE_CONFIG=$(dirname "$0")
 export ANDROID_HOME=$HOME/Library/Android/sdk/
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 export GOPATH=$HOME/go/
 export STUDIO_JDK=/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk
-path+=('$HOME/go/bin/')
-path+=('$ANDROID_HOME/tools/')
-path+=('$ANDROID_HOME/platform-tools/')
-path+=('$ANDROID_HOME/build-tools/25.0.2/')
-path+=('$ZSH')
+path+=("$HOME/go/bin/")
+path+=("$ANDROID_HOME/tools/")
+path+=("$ANDROID_HOME/platform-tools/")
+path+=("$ANDROID_HOME/build-tools/25.0.2/")
+path+=("$ZSH")
 export PATH
 export VIM_VERSION=$(ls -1 /usr/local/Cellar/vim/ | sort -rn | head -n1)
 export VIM_HOME="/usr/local/Cellar/vim/$VIM_VERSION/bin/"
@@ -50,8 +51,3 @@ source $MACHINE_CONFIG/functions.sh
 
 # Welcome screed
 fortune | cowsay -f stegosaurus
-
-# Oh my zsh
-ZSH_THEME="agnoster"
-plugins=(git)
-source $ZSH/oh-my-zsh.sh
