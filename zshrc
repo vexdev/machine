@@ -20,9 +20,6 @@ ZSH_THEME="agnoster"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-# Set VI mode
-bindkey -v
-
 # Defining Variables
 export MACHINE_CONFIG=$(dirname "$0")
 export ANDROID_HOME=$HOME/Library/Android/sdk/
@@ -34,6 +31,8 @@ path+=("$ANDROID_HOME/tools/")
 path+=("$ANDROID_HOME/platform-tools/")
 path+=("$ANDROID_HOME/build-tools/25.0.2/")
 path+=("$ZSH")
+path+=("$HOME/miniconda3/bin")
+path+=("$HOME/projects/depot_tools")
 export PATH
 export VIM_VERSION=$(ls -1 /usr/local/Cellar/vim/ | sort -rn | head -n1)
 export VIM_HOME="/usr/local/Cellar/vim/$VIM_VERSION/bin/"

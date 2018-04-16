@@ -1,4 +1,4 @@
-DEVS="@ljubisa.stankovic @christian.reinhold @victor.ivascu @ciprian.ursu @patryk.zabicki"
+DEVS="@tunji.olu @branimir.conjar @dorin.drimus @jose.mora @yaroslav.mytkalyk @ljubisa.stankovic @domenico.cerasuolo @leszek.mzyk @christian.reinhold"
 
 function prmas {
 	eval stash pull-request master $DEVS 
