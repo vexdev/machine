@@ -20,6 +20,7 @@ NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'rking/ag.vim'
+NeoBundle 'andrewstuart/vim-kubernetes'
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -60,4 +61,4 @@ set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
 set statusline+=%b,0x%-8B\                   " current char
 set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 
-set tabstop=4
+set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab

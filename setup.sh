@@ -48,4 +48,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 echo "Adding zsh config"
 echo "source ~/machine/zshrc" > ~/.zshrc
 
+echo "Some extra tools"
+brew install gdub
+brew install ripgrep
+
 echo "All good! Now kill this terminal and open a new one ;)"

@@ -24,25 +24,26 @@ source $ZSH/oh-my-zsh.sh
 export MACHINE_CONFIG=$(dirname "$0")
 export ANDROID_HOME=$HOME/Library/Android/sdk/
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-export GOPATH=$HOME/go/
+export GOPATH=$HOME/projects/go/
 export STUDIO_JDK=/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk
-path+=("$HOME/go/bin/")
+path+=("$GOPATH/bin")
 path+=("$ANDROID_HOME/tools/")
 path+=("$ANDROID_HOME/platform-tools/")
 path+=("$ANDROID_HOME/build-tools/25.0.2/")
 path+=("$ZSH")
 path+=("$HOME/miniconda3/bin")
 path+=("$HOME/projects/depot_tools")
+path+=("$HOME/Library/Python/2.7/bin")
 export PATH
 export VIM_VERSION=$(ls -1 /usr/local/Cellar/vim/ | sort -rn | head -n1)
 export VIM_HOME="/usr/local/Cellar/vim/$VIM_VERSION/bin/"
+export JAVA_HOME="`/usr/libexec/java_home -v '1.8*'`"
 
 # Some aliases
 alias v="$VIM_HOME/vim"
 alias vi="$VIM_HOME/vim"
 alias vim="$VIM_HOME/vim"
 alias vimdiff="$VIM_HOME/vimdiff"
-alias gw="$MACHINE_CONFIG/gw.sh"
 alias amend='g all && g force'
 
 # Some functions
