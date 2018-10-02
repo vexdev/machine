@@ -25,6 +25,7 @@ echo "so $MACHINE_CONFIG/vimrc" > ~/.vimrc
 echo "Setting up Git configurations"
 echo "git config --global alias.all 'commit -a --amend --no-edit'"
 echo "git config --global alias.force 'push --force'"
+echo "git config --global push.default current"
 
 echo "Installing zsh-git-prompt"
 brew install zsh-git-prompt
@@ -51,5 +52,6 @@ echo "source ~/machine/zshrc" > ~/.zshrc
 echo "Some extra tools"
 brew install gdub
 brew install ripgrep
+brew install git # Because apple sucks
 
 echo "All good! Now kill this terminal and open a new one ;)"
