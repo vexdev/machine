@@ -11,16 +11,16 @@ echo "Setting up zsh (Password needed to configure zsh as default shell for curr
 brew install zsh
 sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
 
-echo "Setting up vim"
-brew install vim
-
-echo "Setting up NeoBundle"
-curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh
-sh install.sh
-rm install.sh
+echo "Setting up neovim"
+brew install neovim
 
 echo "Setting up VimRc"
-echo "so $MACHINE_CONFIG/vimrc" > ~/.vimrc
+mkdir -p ~/.config/nvim/
+echo "source $MACHINE_CONFIG/vimrc" > ~/.config/nvim/init.vim
+
+echo "Setting up VimPlug"
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "Setting up Git configurations"
 echo "git config --global alias.all 'commit -a --amend --no-edit'"
